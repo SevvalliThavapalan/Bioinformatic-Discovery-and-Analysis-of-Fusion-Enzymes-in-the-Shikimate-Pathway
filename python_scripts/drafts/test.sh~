@@ -1,0 +1,40 @@
+#!/bin/bash
+# NOTE : Quote it else use array to avoid problems #
+FILES1="/tmp/global2/sthavapalan/AroC/AroC_?_hits.txt"
+FILES="/tmp/global2/sthavapalan/AroC/AroC_??_hits.txt"
+FILES2="/tmp/global2/sthavapalan/AroC/AroC_21_40/AroC_*_hits.txt"
+
+
+for f in $FILES1
+do
+	echo "Processing $f"
+	o=${f::-9}
+	base=${o: -6}	
+	echo "nohup python3 /tmp/global2/sthavapalan/AroE/FlaGs.py -e 1e-10 -n 3 -g 3 -k -u sevvalli.thavapalan@tuebingen.mpg.de -c 4 -p $f -o $o/$base > $o/$base.log 2>&1&"
+
+done
+
+sleep 10s
+
+for f3 in $FILES
+do
+	echo "Processing $f3"
+	o=${f3::-9}
+	base=${o: -7}	
+ 	echo "nohup python3 /tmp/global2/sthavapalan/AroE/FlaGs.py -e 1e-10 -n 3 -g 3 -k -u sevvalli.thavapalan@tuebingen.mpg.de -c 4 -p $f3 -o $o/$base > $o/$base.log 2>&1&"
+
+done
+sleep 2s
+
+for f2 in $FILES2
+do
+	echo "Processing $f2"
+	o=${f2::-9}
+	base=${o: -7}
+	echo "$base"		
+	echo "nohup python3 /tmp/global2/sthavapalan/AroE/FlaGs.py -e 1e-10 -n 3 -g 3 -k -u sevvalli.thavapalan@tuebingen.mpg.de -c 4 -p $f2 -o $o/$base > $o/$base.log 2>&1&"
+
+done
+
+
+
