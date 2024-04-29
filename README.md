@@ -1,3 +1,3 @@
 # Bioinformatic Discovery and Analysis of Fusion Enzymes in the Shikimate Pathway
 
-This repisotory contains python sxripts created during my Master Thesis.
+This repisotory contains python scripts created during my Master Thesis.
